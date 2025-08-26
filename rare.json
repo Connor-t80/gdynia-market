@@ -1,24 +1,23 @@
 [
   {
-    "item": "钻石",
-    "price": 500,
-    "min": 480,
-    "max": 560,
-    "qty": "≥ 1 组",
-    "seller": "玩家D",
-    "location": "码头W4 → X-420 Y12 Z90",
-    "note": "深层矿道，需自备食物",
-    "updated": "2025-08-26"
+    "item": "铁锭",
+    "price": 60,
+    "unit": "每组(64个)",
+    "stock": "100组以上",
+    "contact": "玩家A",
+    "station": "码头N2 → X120 Y64 Z-40",
+    "note": "长期供货，可预约大单",
+    "updated": "2025-08-26",
+    "pinned": true
   },
   {
-    "item": "下界合金锭",
-    "price": 3200,
-    "min": 3000,
-    "max": 3600,
-    "qty": "散卖",
-    "seller": "玩家E",
-    "location": "下界枢纽N-1 → X100 Y15 Z-20",
-    "note": "可签预约合约",
-    "updated": "2025-08-23"
+    "item": "小麦",
+    "price": 14,
+    "unit": "每组(64个)",
+    "stock": "500组",
+    "contact": "玩家C",
+    "station": "码头S3 → X-80 Y64 Z-300",
+    "note": "大农场，每日补货",
+    "updated": "2025-08-24"
   }
 ]
