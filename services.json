@@ -1,26 +1,26 @@
 [
   {
-    "service": "航运分摊（固定班次）",
-    "price": "每人 10（80/8人）",
-    "provider": "玩家F 航运社",
-    "coverage": "码头N2 ↔ 码头E1 ↔ 码头S3",
-    "note": "迟到不候；可代带少量货物",
+    "service": "邮递速达",
+    "price": "每10组方块，每公里200",
+    "provider": "玩家xxx",
+    "coverage": "全图",
+    "note": "马上到你家门口",
     "updated": "2025-08-26"
   },
   {
     "service": "建筑承接（基础工地）",
     "price": "面议（参考 1500/万方块）",
-    "provider": "玩家G 建造队",
+    "provider": "玩家yyy",
     "coverage": "主世界全境（不含空岛）",
-    "note": "提供材料清单与工期计划",
+    "note": "提供设计服务",
     "updated": "2025-08-25"
   },
   {
-    "service": "代采（农作物/原木）",
-    "price": "按量计价，批量更优",
-    "provider": "玩家H 农庄",
-    "coverage": "码头S3 辐射 2k 格",
-    "note": "支持预约，支持合约",
+    "service": "地图画",
+    "price": "面议（参考 1.2w/张",
+    "provider": "玩家zzz",
+    "coverage": "全部码头/驿站",
+    "note": "支持预约，支持定制",
     "updated": "2025-08-24"
   }
 ]
