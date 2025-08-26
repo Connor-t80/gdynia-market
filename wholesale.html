@@ -9,19 +9,17 @@
 <body>
 <header class="site-header">
   <h1>批发市场</h1>
-  <p class="sub">量大便宜 · 稳定供给 · 建筑/工厂优先</p>
+  <p class="sub">量大便宜 · 稳定供给 · 摆脱生产 · 专心斗争</p>
   <nav class="breadcrumb"><a href="index.html">首页</a> / 批发市场</nav>
 </header>
 
 <main class="container">
   <section class="toolbar">
-    <input id="search" type="search" placeholder="搜索物品 / 货主 / 坐标…" />
+    <input id="search" type="search" placeholder="搜索物品 / 联系人 / 码头…" />
     <select id="sort">
       <option value="item">按物品</option>
-      <option value="price">按价格</option>
-      <option value="min">按最低价</option>
-      <option value="max">按最高价</option>
-      <option value="qty">按批量</option>
+      <option value="price">按单价</option>
+      <option value="stock">按存量</option>
       <option value="updated">按更新时间</option>
     </select>
   </section>
@@ -32,13 +30,12 @@
         <tr>
           <th>物品</th>
           <th>单价</th>
-          <th>最低</th>
-          <th>最高</th>
-          <th>批量</th>
-          <th>货主</th>
-          <th>坐标/码头</th>
+          <th>单位</th>
+          <th>存量</th>
+          <th>联系人</th>
+          <th>所属码头/驿站</th>
           <th>备注</th>
-          <th>更新</th>
+          <th>更新时间</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -48,14 +45,14 @@
 </main>
 
 <footer class="site-footer">
-  <span>数据文件：<code>wholesale.json</code> · 修改后直接 push 即更新</span>
+  <span>数据文件：<code>wholesale.json</code></span>
 </footer>
 
 <script src="app.js"></script>
 <script>
   bootTable({
     json: 'wholesale.json',
-    columns: ['item','price','min','max','qty','seller','location','note','updated'],
+    columns: ['item','price','unit','stock','contact','station','note','updated'],
     searchInput: '#search',
     sortSelect: '#sort',
     tbody: '#tbody',
