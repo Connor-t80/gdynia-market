@@ -62,6 +62,12 @@ function bootTable(cfg) {
     );
   };
 
+  const tr = document.createElement("tr");
+  // 如果这一条是置顶，加类名
+  if (r.pinned) tr.classList.add("pinned");
+  tr.innerHTML = cfg.columns.map(k => `<td>${escapeHtml(r[k] ?? "")}</td>`).join("");
+  tbody.appendChild(tr);
+
   // 排序
   const doSort = () => {
     const key = sortEl?.value || cfg.columns[0];
