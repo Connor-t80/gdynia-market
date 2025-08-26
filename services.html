@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>服务/运输 · MC 批发</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <h1>服务 / 运输</h1>
+  <p class="sub">航运分摊 / 建筑承接 / 代采 / 跑腿</p>
+  <nav class="breadcrumb"><a href="index.html">首页</a> / 服务</nav>
+</header>
+
+<main class="container">
+  <section class="toolbar">
+    <input id="search" type="search" placeholder="搜索服务 / 提供者 / 路线…" />
+    <select id="sort">
+      <option value="service">按服务</option>
+      <option value="price">按价格</option>
+      <option value="updated">按更新时间</option>
+    </select>
+  </section>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>服务</th>
+          <th>价格/费率</th>
+          <th>提供者</th>
+          <th>覆盖范围/路线</th>
+          <th>备注</th>
+          <th>更新</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div id="empty" class="empty" hidden>暂无数据</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <span>数据文件：<code>services.json</code></span>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  bootTable({
+    json: 'services.json',
+    columns: ['service','price','provider','coverage','note','updated'],
+    searchInput: '#search',
+    sortSelect: '#sort',
+    tbody: '#tbody',
+    empty: '#empty'
+  });
+</script>
+</body>
+</html>
