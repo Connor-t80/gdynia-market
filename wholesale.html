@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>批发市场 · MC 批发</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <h1>批发市场</h1>
+  <p class="sub">量大便宜 · 稳定供给 · 建筑/工厂优先</p>
+  <nav class="breadcrumb"><a href="index.html">首页</a> / 批发市场</nav>
+</header>
+
+<main class="container">
+  <section class="toolbar">
+    <input id="search" type="search" placeholder="搜索物品 / 货主 / 坐标…" />
+    <select id="sort">
+      <option value="item">按物品</option>
+      <option value="price">按价格</option>
+      <option value="min">按最低价</option>
+      <option value="max">按最高价</option>
+      <option value="qty">按批量</option>
+      <option value="updated">按更新时间</option>
+    </select>
+  </section>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>物品</th>
+          <th>单价</th>
+          <th>最低</th>
+          <th>最高</th>
+          <th>批量</th>
+          <th>货主</th>
+          <th>坐标/码头</th>
+          <th>备注</th>
+          <th>更新</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div id="empty" class="empty" hidden>暂无数据</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <span>数据文件：<code>wholesale.json</code> · 修改后直接 push 即更新</span>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  bootTable({
+    json: 'wholesale.json',
+    columns: ['item','price','min','max','qty','seller','location','note','updated'],
+    searchInput: '#search',
+    sortSelect: '#sort',
+    tbody: '#tbody',
+    empty: '#empty'
+  });
+</script>
+</body>
+</html>
