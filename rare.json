@@ -1,22 +1,22 @@
 [
   {
-    "item": "铁锭",
-    "price": 60,
+    "item": "石英块",
+    "price": 30,
     "unit": "每组(64个)",
-    "stock": "100组以上",
-    "contact": "玩家A",
-    "station": "码头N2 → X120 Y64 Z-40",
-    "note": "长期供货，可预约大单",
+    "stock": "100组",
+    "contact": "xxx",
+    "station": "码头Gdynia",
+    "note": "长期供货",
     "updated": "2025-08-26",
     "pinned": true
   },
   {
     "item": "小麦",
-    "price": 14,
+    "price": 10,
     "unit": "每组(64个)",
     "stock": "500组",
-    "contact": "玩家C",
-    "station": "码头S3 → X-80 Y64 Z-300",
+    "contact": "yyy",
+    "station": "码头zzz",
     "note": "大农场，每日补货",
     "updated": "2025-08-24"
   }
