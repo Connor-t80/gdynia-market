@@ -1,4 +1,4 @@
-// 轻量工具：加载 JSON，渲染表格，提供搜索 & 简单排序
+// app.js - 支持置顶货架、搜索、排序
 function bootTable(cfg) {
   const tbody = document.querySelector(cfg.tbody);
   const empty = document.querySelector(cfg.empty);
@@ -8,18 +8,28 @@ function bootTable(cfg) {
   let rows = [];
   let filtered = [];
 
+  // 加载 JSON 数据
   fetch(cfg.json, { cache: "no-store" })
     .then(r => r.json())
     .then(data => {
       rows = Array.isArray(data) ? data : [];
       filtered = rows.slice();
-      render();
+      updateAndRender();
     })
     .catch(() => {
-      rows = []; filtered = [];
-      render();
+      rows = [];
+      filtered = [];
+      updateAndRender();
     });
 
+  // 更新过滤 + 排序 + 渲染
+  const updateAndRender = () => {
+    doFilter();
+    doSort();
+    render();
+  };
+
+  // 渲染表格
   const render = () => {
     tbody.innerHTML = "";
     if (!filtered.length) {
@@ -34,38 +44,53 @@ function bootTable(cfg) {
     }
   };
 
+  // HTML 转义
   const escapeHtml = (s) => String(s)
     .replaceAll("&","&amp;")
     .replaceAll("<","&lt;")
     .replaceAll(">","&gt;");
 
+  // 搜索过滤
   const doFilter = () => {
     const q = (searchEl?.value || "").trim().toLowerCase();
-    if (!q) { filtered = rows.slice(); return; }
+    if (!q) {
+      filtered = rows.slice();
+      return;
+    }
     filtered = rows.filter(r =>
       cfg.columns.some(k => String(r[k] ?? "").toLowerCase().includes(q))
     );
   };
 
+  // 排序
   const doSort = () => {
     const key = sortEl?.value || cfg.columns[0];
     filtered.sort((a,b) => {
-      const va = a[key]; const vb = b[key];
-      const na = Number(va), nb = Number(vb);
+      // 置顶优先
+      const aPinned = a.pinned ? 1 : 0;
+      const bPinned = b.pinned ? 1 : 0;
+      if (bPinned - aPinned !== 0) return bPinned - aPinned;
+
+      // 数值排序优先
+      const na = Number(a[key]);
+      const nb = Number(b[key]);
       const bothNum = !Number.isNaN(na) && !Number.isNaN(nb);
       if (bothNum) return na - nb;
-      return String(va ?? "").localeCompare(String(vb ?? ""), "zh-Hans");
+
+      // 文字排序
+      return String(a[key] ?? "").localeCompare(String(b[key] ?? ""), "zh-Hans");
     });
   };
 
-  searchEl?.addEventListener("input", () => { doFilter(); doSort(); render(); });
-  sortEl?.addEventListener("change", () => { doFilter(); doSort(); render(); });
+  // 事件监听
+  searchEl?.addEventListener("input", updateAndRender);
+  sortEl?.addEventListener("change", updateAndRender);
 
-  // 初始排序渲染
+  // 初始渲染
   const ready = setInterval(() => {
     if (rows) {
       clearInterval(ready);
-      doFilter(); doSort(); render();
+      updateAndRender();
     }
   }, 50);
 }
