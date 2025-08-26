@@ -45,7 +45,7 @@ body {
   background-color: #000;
 }
 .banner img {
-  width: 66.66vw;  /* 2/3 屏幕宽 */
+  width: 40vw;  /* 2/5 屏幕宽 */
   height: 100vh;   /* 高度一倍屏幕 */
   object-fit: cover;
 }
