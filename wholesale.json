@@ -30,6 +30,7 @@
     "seller": "玩家C",
     "location": "码头S3 → X-80 Y64 Z-300",
     "note": "大农场，每日补货",
-    "updated": "2025-08-24"
+    "updated": "2025-08-24",
+    "pinned": true
   }
 ]
