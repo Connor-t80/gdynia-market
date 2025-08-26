@@ -5,6 +5,7 @@
   --muted: #666;
   --border: #e6e8ef;
   --accent: #3b82f6;
+  --pinned-bg: #fffbcc; /* 置顶高亮 */
 }
 * { box-sizing: border-box; }
 body {
@@ -47,10 +48,8 @@ thead th {
 tbody td { padding: 12px; border-top: 1px solid var(--border); vertical-align: middle; }
 tbody tr:nth-child(even) { background: #fafafa; }
 
+/* 高亮置顶行 */
+tbody tr.pinned { background-color: var(--pinned-bg); font-weight: 600; }
+
 .empty { padding: 28px; text-align: center; color: var(--muted); }
 code { background: #eef2ff; padding: 2px 6px; border-radius: 6px; }
-
-tr.pinned {
-  background-color: #fffbcc; /* 浅黄色高亮，可按喜好调整 */
-  font-weight: 600;
-}
