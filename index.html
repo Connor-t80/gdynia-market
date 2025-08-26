@@ -1,87 +1,47 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>服务器物价表</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: center;
-    }
-    th {
-      background: #333;
-      color: white;
-    }
-    tr:nth-child(even) {
-      background: #f2f2f2;
-    }
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MC 批发市场 · 导航</title>
+  <meta name="description" content="Minecraft 服务器批发市场与信息展示站点" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>我的世界服务器 - 市场物价表</h1>
-  
-  <table>
-    <thead>
-      <tr>
-        <th>物品</th>
-        <th>平均价</th>
-        <th>最低价</th>
-        <th>最高价</th>
-        <th>备注</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>铁锭</td>
-        <td>60</td>
-        <td>50</td>
-        <td>70</td>
-        <td>常见，需求大</td>
-      </tr>
-      <tr>
-        <td>钻石</td>
-        <td>500</td>
-        <td>480</td>
-        <td>550</td>
-        <td>稀有资源</td>
-      </tr>
-      <tr>
-        <td>小麦</td>
-        <td>15</td>
-        <td>10</td>
-        <td>20</td>
-        <td>食物来源</td>
-      </tr>
-    </tbody>
-  </table>
+  <header class="site-header">
+    <h1>MC 批发市场</h1>
+    <p class="sub">只做信息展示，不托管、不代售。货主在自有领地上架，平台收规则费。</p>
+  </header>
 
-  <footer>
-    <p>最后更新：2025-08-26 ｜ 本表仅供参考</p>
+  <main class="container">
+    <nav class="nav-grid">
+      <a class="card" href="wholesale.html">
+        <h2>批发市场</h2>
+        <p>量大、便宜、稳定供给的基础物资</p>
+      </a>
+      <a class="card" href="rare.html">
+        <h2>稀有/高价值</h2>
+        <p>钻石、下界合金等高价值物品</p>
+      </a>
+      <a class="card" href="services.html">
+        <h2>服务/运输</h2>
+        <p>航运分摊、建筑承接、代采等服务信息</p>
+      </a>
+    </nav>
+
+    <section class="info">
+      <h3>平台规则（草案）</h3>
+      <ul>
+        <li>货主可购买“货架位”（广告位），按周/月收费或置顶收费。</li>
+        <li>达成交易后，按约定提供 <strong>1%</strong> 的货物或等值货币作为手续费。</li>
+        <li>平台仅做信息桥梁，不参与托管；交易在货主自有箱子内完成。</li>
+        <li>建议使用书本留存合约时间点与坐标，避免误会。</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2025 MC 批发市场（只读展示）</span>
   </footer>
 </body>
 </html>
